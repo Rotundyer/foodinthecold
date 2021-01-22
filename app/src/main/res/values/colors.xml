@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#35CCE7</color>
+    <color name="colorPrimaryDark">#35BDD7</color>
+    <color name="colorAccent">#523F73</color>
+    <color name="colorAccentBackground">#1A523F73</color>
+
+    <color name="link">#523F73</color>
+    <color name="background">#33F5F5F5</color>
+    <color name="background_lite">#FBFBFB</color>
+    <color name="border">#FFFFFF</color>
+    <color name="disabled">#33CECECE</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <!--    Цвета текста   -->
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#858585</color>
+    <color name="border_color">#66858585</color>
+    <color name="disabled_color">#33CECECE</color>
+
+    <!--   Функциональные цвета   -->
+    <color name="primary_color">#424974</color>
+    <color name="primary_color_darken">#2D335E</color>
+    <color name="secondary_color">#523F73</color>
+    <color name="link_color">#523F73</color>
+
+    <color name="success">#2DB159</color>
+    <color name="warning">#FFDA79</color>
+    <color name="error">#FF6868</color>
+    <color name="blue_white_20">#60CCE7</color>
+</resources>

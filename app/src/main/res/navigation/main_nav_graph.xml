@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.coffeestudio.foodinthecold.view.main.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.coffeestudio.foodinthecold.view.cart.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="ru.coffeestudio.foodinthecold.view.catalog.CategoryListFragment"
+        android:label="CategoryListFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.coffeestudio.foodinthecold.view.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>
