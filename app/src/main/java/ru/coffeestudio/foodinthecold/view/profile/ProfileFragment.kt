@@ -18,7 +18,8 @@ class ProfileFragment: BaseFragment() {
     }
     override fun initView() {}
 
-    override fun getData() {}
+    override fun getData() {
+    }
 
     override fun <T> setView(data: T?) {}
 }

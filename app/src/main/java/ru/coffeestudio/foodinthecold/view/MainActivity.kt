@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.util.TabManager
 
@@ -66,6 +67,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
 
         })
-        return true
+        return super.onCreateOptionsMenu(menu)
     }
 }
