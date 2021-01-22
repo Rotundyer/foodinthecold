@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_search_album"
+        android:id="@+id/menu_search"
         android:icon="@drawable/ic_search"
-        android:title="@string/str_search_album"
-        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Привет"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="collapseActionView|always" />
 
 </menu>
