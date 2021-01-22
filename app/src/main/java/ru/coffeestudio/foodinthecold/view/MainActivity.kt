@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         if (savedInstanceState == null)
             tabManager.currentController = tabManager.navMainController
+
+//        supportActionBar?.hide()
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
