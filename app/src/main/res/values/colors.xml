@@ -13,6 +13,8 @@
 
     <color name="white">#FFFFFF</color>
     <color name="white_20">#33FFFFFF</color>
+    <color name="blue">#35CCE7</color>
+    <color name="blue_white">#CC35CCE7</color>
 
     <color name="transparent">#00000000</color>
 
@@ -31,5 +33,7 @@
     <color name="success">#2DB159</color>
     <color name="warning">#FFDA79</color>
     <color name="error">#FF6868</color>
-    <color name="blue_white_20">#60CCE7</color>
+
+    <color name="blue_glide">#35CCE7</color>
+    <color name="gray_glide">#D1D8DA</color>
 </resources>

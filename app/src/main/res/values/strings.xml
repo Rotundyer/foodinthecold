@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Food In The Cold</string>
+    <string name="Into_the_search">Введите запрос</string>
+    <string name="News">Новинки</string>
 </resources>

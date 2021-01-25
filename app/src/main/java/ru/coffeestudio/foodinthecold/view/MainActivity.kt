@@ -10,10 +10,14 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbar.recyclerSearch
 import ru.coffeestudio.foodinthecold.R
+import ru.coffeestudio.foodinthecold.adapter.SearchAdapter
 import ru.coffeestudio.foodinthecold.util.TabManager
 
 
@@ -29,6 +33,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         if (savedInstanceState == null)
             tabManager.currentController = tabManager.navMainController
+
+        supportActionBar?.elevation = 0F
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
@@ -70,16 +76,30 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             setTextSize(1,20F)
         }
 
+        recyclerSearch.setHasFixedSize(true)
+        recyclerSearch.layoutManager = LinearLayoutManager(this@MainActivity)
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                recyclerSearch.adapter = SearchAdapter(setList().filter { newText != "" })
                 return false
             }
 
         })
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun setList(): ArrayList<String> {
+        val list = arrayListOf<String>()
+        list.add("Кот")
+        list.add("Собака")
+        list.add("Колбаса")
+        list.add("Котлеты")
+
+        return list
     }
 }
