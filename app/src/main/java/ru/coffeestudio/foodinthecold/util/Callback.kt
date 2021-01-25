@@ -1,8 +1,8 @@
 package ru.coffeestudio.foodinthecold.util
 
 import ru.coffeestudio.foodinthecold.db.entities.ProductEntity
-import ru.coffeestudio.foodinthecold.view.model.Category
-import ru.coffeestudio.foodinthecold.view.model.CharValue
+import ru.coffeestudio.foodinthecold.model.Category
+import ru.coffeestudio.foodinthecold.model.CharValue
 
 interface ClickableItem {
     fun onItemClick(itemID: Int)

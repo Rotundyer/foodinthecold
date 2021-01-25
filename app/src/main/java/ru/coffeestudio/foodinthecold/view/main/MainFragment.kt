@@ -7,10 +7,10 @@ import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.adapter.main.SliderPagerAdapter
+import ru.coffeestudio.foodinthecold.model.Category
 import ru.coffeestudio.foodinthecold.util.CategoryListener
 import ru.coffeestudio.foodinthecold.view.base.BaseFragment
 import ru.coffeestudio.foodinthecold.view.model.BannerItem
-import ru.coffeestudio.foodinthecold.view.model.Category
 
 class MainFragment: BaseFragment(), CategoryListener {
 
