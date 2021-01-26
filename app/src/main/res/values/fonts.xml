@@ -80,4 +80,10 @@
         <item name="android:fontFamily">@font/open_sans</item>
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="TextRegular8" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">8sp</item>
+    </style>
 </resources>

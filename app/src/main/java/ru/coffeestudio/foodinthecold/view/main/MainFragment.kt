@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.adapter.catalog.ProductListAdapter
+import ru.coffeestudio.foodinthecold.adapter.catalog.RecipesListAdapter
 import ru.coffeestudio.foodinthecold.adapter.main.SliderPagerAdapter
 import ru.coffeestudio.foodinthecold.db.entities.ProductEntity
 import ru.coffeestudio.foodinthecold.model.Category
@@ -54,7 +55,7 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
         data2.add(
             ProductSimple(
                 1,
-                "Колбаса",
+                "Колбаса крутая совсем из мяса",
                 priceBase = BigDecimal(15000),
                 price = BigDecimal(10000)
             )
@@ -74,8 +75,26 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
         recyclerBestsellers.layoutManager = GridLayoutManager(context, 2)
         recyclerBestsellers.adapter = ProductListAdapter(data2, true, this, this, this)
 
-//        recyclerSets.layoutManager = GridLayoutManager(context, 2)
-//        recyclerSets.adapter = ProductListAdapter(data2, true, this, this, this)
+
+        val data3 = ArrayList<ProductSimple>()
+        data3.add(
+            ProductSimple(
+                1,
+                "Запеканка «Итальянское наваждение»",
+                priceBase = BigDecimal(15000),
+                price = BigDecimal(7600)
+            )
+        )
+        data3.add(
+            ProductSimple(
+                2,
+                "Запеканка «Итальянское наваждение»",
+                priceBase = BigDecimal(15000),
+                price = BigDecimal(7600)
+            )
+        )
+        recyclerRecipes.layoutManager = GridLayoutManager(context, 2)
+        recyclerRecipes.adapter = RecipesListAdapter(data3, true, this, this, this)
     }
 
     override fun onCategorySelect(category: Category) {}

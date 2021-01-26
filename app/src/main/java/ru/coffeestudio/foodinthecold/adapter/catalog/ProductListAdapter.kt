@@ -46,8 +46,8 @@ class ProductListAdapter(
 
     inner class ProductHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val photoView: ImageView = view.findViewById(R.id.item_recipes_image)
-        private val titleView: TextView = view.findViewById(R.id.item_recipes_title)
+        private val photoView: ImageView = view.findViewById(R.id.item_product_image)
+        private val titleView: TextView = view.findViewById(R.id.item_product_title)
         private val priceView: TextView = view.findViewById(R.id.item_product_price)
         private val priceBaseView: TextView = view.findViewById(R.id.item_product_price_base)
 
@@ -80,8 +80,14 @@ class ProductListAdapter(
             stars.add(star5)
 
             when ((0..1).random()) {
-                0 -> Glide.with(heart.context).load(R.drawable.ic_heart_on).fitCenter().into(heart)
-                1 -> Glide.with(heart.context).load(R.drawable.ic_heart_off).fitCenter().into(heart)
+                0 -> {
+                    Glide.with(heart.context).load(R.drawable.ic_heart_on).fitCenter().into(heart)
+                    heart.setPadding(0,0,0,0)
+                }
+                1 -> {
+                    Glide.with(heart.context).load(R.drawable.ic_heart_off).fitCenter().into(heart)
+                    heart.setPadding(10,10,10,10)
+                }
             }
 
             var a = 0

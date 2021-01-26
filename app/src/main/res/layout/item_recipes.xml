@@ -38,13 +38,12 @@
         <TextView
             android:id="@+id/item_recipes_title"
             style="@style/TextRegular16"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/stars_margin"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="@dimen/stars_margin"
             android:layout_marginBottom="8dp"
-            android:lines="2"
             android:text="Колбаса Докторская Стародворская вареная, 0.5 кг"
             android:textColor="@color/text_primary"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,18 +58,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:padding="10dp"
+            android:layout_marginTop="10dp"
 
             app:layout_constraintStart_toStartOf="@+id/item_recipes_title"
             app:layout_constraintTop_toBottomOf="@+id/item_recipes_title">
 
             <ImageView
                 android:id="@+id/item_recipes_chief"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_recipes_chef"
-
-                android:layout_margin="5dp"
 
                 app:layout_constraintEnd_toStartOf="@+id/item_recipes_chief_text"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -82,9 +79,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                style="@style/TextRegular16"
+                style="@style/TextRegular12"
                 android:text="Лёгкий"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
 
                 app:layout_constraintBottom_toBottomOf="@+id/item_recipes_chief"
                 app:layout_constraintTop_toTopOf="@+id/item_recipes_chief"
@@ -99,18 +96,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:padding="10dp"
-
             app:layout_constraintTop_toTopOf="@+id/constraint_recipes_one"
             app:layout_constraintEnd_toEndOf="@+id/item_recipes_title">
 
             <ImageView
                 android:id="@+id/item_recipes_hourglass"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_recipes_hourglass"
-
-                android:layout_margin="5dp"
 
                 app:layout_constraintEnd_toStartOf="@+id/item_recipes_hourglass_text"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -122,9 +115,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                style="@style/TextRegular16"
+                style="@style/TextRegular12"
                 android:text="50 мин."
-                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
 
                 app:layout_constraintBottom_toBottomOf="@+id/item_recipes_hourglass"
                 app:layout_constraintTop_toTopOf="@+id/item_recipes_hourglass"
@@ -139,10 +132,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/TextBold24"
+            style="@style/TextBold16"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:paddingStart="15dp"
             android:text="7 600 руб."
 
             app:layout_constraintStart_toStartOf="@+id/constraint_recipes_one"
@@ -153,10 +145,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            style="@style/TextRegular14"
+            style="@style/TextRegular10"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:paddingStart="15dp"
+            android:paddingStart="5dp"
             android:text="@string/ForOnePerson"
             android:textColor="@color/text_secondary"
 
@@ -167,9 +159,9 @@
         <Button
             android:id="@+id/item_recipes_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
 
-            style="@style/TextRegular16"
+            style="@style/TextRegular14"
             android:text="@string/ModeDetails"
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
