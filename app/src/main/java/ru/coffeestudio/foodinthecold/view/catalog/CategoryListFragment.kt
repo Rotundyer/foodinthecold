@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.category_list.*
-import ru.coffeestudio.food.model.response.CategoryList
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.adapter.catalog.CategoryListAdapter
 import ru.coffeestudio.foodinthecold.model.Category
 import ru.coffeestudio.foodinthecold.util.CategoryListener
 import ru.coffeestudio.foodinthecold.view.base.BaseFragment
-import ru.coffeestudio.foodinthecold.view.model.BannerItem
 
 class CategoryListFragment: BaseFragment(), CategoryListener {
 

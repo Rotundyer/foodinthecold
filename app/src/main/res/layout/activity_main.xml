@@ -125,7 +125,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:background="@color/background"
+        android:background="@color/white"
         android:hapticFeedbackEnabled="true"
 
         app:elevation="16dp"

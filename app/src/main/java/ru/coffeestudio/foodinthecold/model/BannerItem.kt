@@ -1,4 +1,4 @@
-package ru.coffeestudio.foodinthecold.view.model
+package ru.coffeestudio.foodinthecold.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

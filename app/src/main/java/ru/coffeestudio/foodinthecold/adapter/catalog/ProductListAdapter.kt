@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.coffeestudio.foodinthecold.R
@@ -13,6 +14,7 @@ import ru.coffeestudio.foodinthecold.model.ProductSimple
 import ru.coffeestudio.foodinthecold.util.CartableItem
 import ru.coffeestudio.foodinthecold.util.ClickableItem
 import ru.coffeestudio.foodinthecold.util.LikableItem
+import ru.coffeestudio.foodinthecold.util.productSimpleToProductEntity
 
 class ProductListAdapter(
     private val products: ArrayList<ProductSimple>,
@@ -53,9 +55,8 @@ class ProductListAdapter(
 
         private val heart: ImageView = view.findViewById(R.id.item_product_like)
 
-//        private val likeView: ImageView = view.findViewById(R.id.item_product_like)
+        private val likeView: ImageView = view.findViewById(R.id.item_product_like)
 //        private val cartView: ImageView = view.findViewById(R.id.item_product_cart)
-//        private val rootView: CardView = view.findViewById(R.id.item_product_card)
 
         private var stars = ArrayList<ImageView>()
 
@@ -64,6 +65,8 @@ class ProductListAdapter(
         private val star3: ImageView = view.findViewById(R.id.star3)
         private val star4: ImageView = view.findViewById(R.id.star4)
         private val star5: ImageView = view.findViewById(R.id.star5)
+
+        private val rootView: CardView = view.findViewById(R.id.item_product_card)
 
         fun bind(product: ProductSimple) {
 
@@ -79,23 +82,14 @@ class ProductListAdapter(
             stars.add(star4)
             stars.add(star5)
 
-            when ((0..1).random()) {
-                0 -> {
-                    Glide.with(heart.context).load(R.drawable.ic_heart_on).fitCenter().into(heart)
-                    heart.setPadding(0,0,0,0)
-                }
-                1 -> {
-                    Glide.with(heart.context).load(R.drawable.ic_heart_off).fitCenter().into(heart)
-                    heart.setPadding(10,10,10,10)
-                }
-            }
-
             var a = 0
             while (a < (0..5).random()) {
                 Glide.with(stars[a].context).load(R.drawable.star_on).into(stars[a])
                 a++
             }
 
+            Glide.with(likeView.context).load(R.drawable.ic_heart_off).fitCenter().into(likeView)
+            likeView.setPadding(10,10,10,10)
 
 //            val priceBase = product.priceBase ?: 0
 //
@@ -106,24 +100,24 @@ class ProductListAdapter(
 //
 //            priceBaseView.paintFlags = (Paint.STRIKE_THRU_TEXT_FLAG)
 //            setPhotoItem(product.imagePreview, photoView)
-//
-//            rootView.setOnClickListener {
-//                callbackClick?.onItemClick(product.id)
-//            }
-//
-//            likeView.setOnClickListener {
-//                callbackLike?.onItemLiked(productSimpleToProductEntity(product))
-//
-//                if (!product.liked) {
-//                    product.liked = true
-//                    Glide.with(likeView.context).load(R.drawable.ic_heart_on)
-//                        .into(likeView)
-//                } else {
-//                    product.liked = false
-//                    Glide.with(likeView.context).load(R.drawable.ic_heart_off)
-//                        .into(likeView)
-//                }
-//            }
+
+            rootView.setOnClickListener {
+                callbackClick?.onItemClick(product.id)
+            }
+
+            likeView.setOnClickListener {
+                callbackLike?.onItemLiked(productSimpleToProductEntity(product))
+
+                if (!product.liked) {
+                    product.liked = true
+                    Glide.with(likeView.context).load(R.drawable.ic_heart_on).fitCenter().into(likeView)
+                    likeView.setPadding(0,0,0,0)
+                } else {
+                    product.liked = false
+                    Glide.with(likeView.context).load(R.drawable.ic_heart_off).fitCenter().into(likeView)
+                    likeView.setPadding(10,10,10,10)
+                }
+            }
 //
 //            cartView.setOnClickListener {
 //                callbackCart?.onItemCarted(productSimpleToProductEntity(product))

@@ -98,10 +98,16 @@ class TabManager(private val mainActivity: MainActivity) {
     fun switchTab(tabId: Int, addToHistory: Boolean = true) {
         if (currentTabId != tabId) {
             currentTabId = tabId
+        } else if (currentTabId == R.id.bottom_action_catalog) {
+            currentController?.navigate(startDestinationsIDs[tabId] ?: R.id.categoryListFragment)
+        } else if (currentTabId == R.id.bottom_action_cart) {
+            currentController?.navigate(startDestinationsIDs[tabId] ?: R.id.cartFragment)
+        } else if (currentTabId == R.id.bottom_action_profile) {
+            currentController?.navigate(startDestinationsIDs[tabId] ?: R.id.profileFragment)
         } else {
             tabHistory.clear()
-            currentTabId = tabId
-            currentController?.navigate(startDestinationsIDs.get(tabId) ?: R.id.mainFragment)
+//            currentTabId = tabId
+            currentController?.navigate(startDestinationsIDs[tabId] ?: R.id.mainFragment)
         }
 
         when (tabId) {

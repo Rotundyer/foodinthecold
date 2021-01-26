@@ -10,7 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.model.Category
 import ru.coffeestudio.foodinthecold.util.CategoryListener
-import ru.coffeestudio.foodinthecold.view.model.BannerItem
+import ru.coffeestudio.foodinthecold.model.BannerItem
 
 class SliderPagerAdapter(
     private val images: List<BannerItem>,

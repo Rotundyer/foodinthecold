@@ -1,16 +1,14 @@
 package ru.coffeestudio.foodinthecold.view.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.GridLayout
-import android.widget.Toolbar
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.main.*
-import kotlinx.android.synthetic.main.toolbar.*
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.adapter.catalog.ProductListAdapter
 import ru.coffeestudio.foodinthecold.adapter.catalog.RecipesListAdapter
+import ru.coffeestudio.foodinthecold.adapter.catalog.SetsListAdapter
 import ru.coffeestudio.foodinthecold.adapter.main.SliderPagerAdapter
 import ru.coffeestudio.foodinthecold.db.entities.ProductEntity
 import ru.coffeestudio.foodinthecold.model.Category
@@ -20,7 +18,7 @@ import ru.coffeestudio.foodinthecold.util.CategoryListener
 import ru.coffeestudio.foodinthecold.util.ClickableItem
 import ru.coffeestudio.foodinthecold.util.LikableItem
 import ru.coffeestudio.foodinthecold.view.base.BaseFragment
-import ru.coffeestudio.foodinthecold.view.model.BannerItem
+import ru.coffeestudio.foodinthecold.model.BannerItem
 import java.math.BigDecimal
 
 class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, CategoryListener {
@@ -95,10 +93,34 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
         )
         recyclerRecipes.layoutManager = GridLayoutManager(context, 2)
         recyclerRecipes.adapter = RecipesListAdapter(data3, true, this, this, this)
+
+        val data4 = ArrayList<ProductSimple>()
+        data4.add(
+            ProductSimple(
+                1,
+                "Набор «Холостяк»",
+                priceBase = BigDecimal(15000),
+                price = BigDecimal(7600)
+            )
+        )
+        data4.add(
+            ProductSimple(
+                2,
+                "Набор «Холостяк»",
+                priceBase = BigDecimal(15000),
+                price = BigDecimal(7600)
+            )
+        )
+
+        recyclerSets.layoutManager = GridLayoutManager(context, 2)
+        recyclerSets.adapter = SetsListAdapter(data4, true, this, this, this)
     }
 
     override fun onCategorySelect(category: Category) {}
-    override fun onItemClick(itemID: Int) {}
+    override fun onItemClick(itemID: Int) {
+
+        Navigation.findNavController(main_layout).navigate(R.id.productFragment)
+    }
     override fun onItemLiked(product: ProductEntity) {}
     override fun onItemCarted(product: ProductEntity) {}
 }
