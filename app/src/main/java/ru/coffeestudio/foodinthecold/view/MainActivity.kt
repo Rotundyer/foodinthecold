@@ -15,8 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main.*
-import kotlinx.android.synthetic.main.toolbar.*
-import kotlinx.android.synthetic.main.toolbar.recyclerSearch
 import ru.coffeestudio.foodinthecold.R
 import ru.coffeestudio.foodinthecold.adapter.SearchAdapter
 import ru.coffeestudio.foodinthecold.util.TabManager
@@ -63,46 +61,46 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return true
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.search_menu, menu)
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.search_menu, menu)
+//
+//        val searchItem = menu!!.findItem(R.id.menu_search)
+//        val searchView: SearchView = searchItem.actionView as SearchView
+//
+//        val open_sans = Typeface.createFromAsset(assets, "fonts/open_sans.ttf")
+//        val open_sans_semibold = Typeface.createFromAsset(assets, "fonts/open_sans_semibold.ttf")
+//        val searchText = searchView.findViewById(R.id.search_src_text) as TextView
+//
+//        searchText.apply {
+//            typeface = open_sans
+//            setTextColor(Color.WHITE)
+//            setTextSize(1,20F)
+//        }
+//
+//        recyclerSearch.setHasFixedSize(true)
+//        recyclerSearch.layoutManager = LinearLayoutManager(this@MainActivity)
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                recyclerSearch.adapter = SearchAdapter(setList().filter { newText != "" })
+//                return false
+//            }
+//
+//        })
+//        return super.onCreateOptionsMenu(menu)
+//    }
 
-        val searchItem = menu!!.findItem(R.id.menu_search)
-        val searchView: SearchView = searchItem.actionView as SearchView
-
-        val open_sans = Typeface.createFromAsset(assets, "fonts/open_sans.ttf")
-        val open_sans_semibold = Typeface.createFromAsset(assets, "fonts/open_sans_semibold.ttf")
-        val searchText = searchView.findViewById(R.id.search_src_text) as TextView
-
-        searchText.apply {
-            typeface = open_sans
-            setTextColor(Color.WHITE)
-            setTextSize(1,20F)
-        }
-
-        recyclerSearch.setHasFixedSize(true)
-        recyclerSearch.layoutManager = LinearLayoutManager(this@MainActivity)
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                recyclerSearch.adapter = SearchAdapter(setList().filter { newText != "" })
-                return false
-            }
-
-        })
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    private fun setList(): ArrayList<String> {
-        val list = arrayListOf<String>()
-        list.add("Кот")
-        list.add("Собака")
-        list.add("Колбаса")
-        list.add("Котлеты")
-
-        return list
-    }
+//    private fun setList(): ArrayList<String> {
+//        val list = arrayListOf<String>()
+//        list.add("Кот")
+//        list.add("Собака")
+//        list.add("Колбаса")
+//        list.add("Котлеты")
+//
+//        return list
+//    }
 }

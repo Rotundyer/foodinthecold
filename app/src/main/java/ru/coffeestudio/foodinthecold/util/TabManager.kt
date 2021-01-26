@@ -114,22 +114,22 @@ class TabManager(private val mainActivity: MainActivity) {
             R.id.bottom_action_main -> {
                 currentController = navMainController
                 invisibleTabContainerExcept(mainContainer)
-                mainActivity.supportActionBar?.show()
+//                mainActivity.supportActionBar?.show()
             }
             R.id.bottom_action_catalog -> {
                 currentController = navCatalogController
                 invisibleTabContainerExcept(catalogContainer)
-                mainActivity.supportActionBar?.show()
+//                mainActivity.supportActionBar?.show()
             }
             R.id.bottom_action_cart -> {
                 currentController = navCartController
                 invisibleTabContainerExcept(cartContainer)
-                mainActivity.supportActionBar?.show()
+//                mainActivity.supportActionBar?.show()
             }
             R.id.bottom_action_profile -> {
                 currentController = navProfileController
                 invisibleTabContainerExcept(profileContainer)
-                mainActivity.supportActionBar?.hide()
+//                mainActivity.supportActionBar?.hide()
             }
         }
         if (addToHistory)

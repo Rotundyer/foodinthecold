@@ -1,11 +1,18 @@
 package ru.coffeestudio.foodinthecold.view.main
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.main.*
 import ru.coffeestudio.foodinthecold.R
+import ru.coffeestudio.foodinthecold.adapter.SearchAdapter
 import ru.coffeestudio.foodinthecold.adapter.catalog.ProductListAdapter
 import ru.coffeestudio.foodinthecold.adapter.catalog.RecipesListAdapter
 import ru.coffeestudio.foodinthecold.adapter.catalog.SetsListAdapter
@@ -19,6 +26,7 @@ import ru.coffeestudio.foodinthecold.util.ClickableItem
 import ru.coffeestudio.foodinthecold.util.LikableItem
 import ru.coffeestudio.foodinthecold.view.base.BaseFragment
 import ru.coffeestudio.foodinthecold.model.BannerItem
+import ru.coffeestudio.foodinthecold.view.MainActivity
 import java.math.BigDecimal
 
 class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, CategoryListener {
@@ -27,7 +35,7 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.main, container, false)
     }
 
@@ -35,6 +43,9 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
 
     override fun getData() {
         setView(null)
+
+        (activity as MainActivity).setSupportActionBar(toolbar)
+        toolbar.setSetting()
     }
 
     override fun <T> setView(data: T?) {
@@ -123,4 +134,27 @@ class MainFragment : BaseFragment(), ClickableItem, CartableItem, LikableItem, C
     }
     override fun onItemLiked(product: ProductEntity) {}
     override fun onItemCarted(product: ProductEntity) {}
+
+    private fun Toolbar.setSetting(){
+        inflateMenu(R.menu.search_menu)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setList(): ArrayList<String> {
+        val list = arrayListOf<String>()
+        list.add("Кот")
+        list.add("Собака")
+        list.add("Колбаса")
+        list.add("Котлеты")
+
+        return list
+    }
 }
