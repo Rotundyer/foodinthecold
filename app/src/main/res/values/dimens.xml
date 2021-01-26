@@ -5,6 +5,6 @@
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="button_height">36dp</dimen>
     <dimen name="stars_size">18dp</dimen>
-    <dimen name="stars_margin">30dp</dimen>
+    <dimen name="stars_margin">10dp</dimen>
     <dimen name="ic_cart_catalog">40dp</dimen>
 </resources>

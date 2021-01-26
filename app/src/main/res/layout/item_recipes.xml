@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_recipes_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/ic_item_category_background"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/card_corner_radius_8"
+    app:elevation="0dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/big_recipes_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/item_recipes_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:elevation="0dp"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_item_category_background" />
+
+        <TextView
+            android:id="@+id/item_recipes_title"
+            style="@style/TextRegular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/stars_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/stars_margin"
+            android:layout_marginBottom="8dp"
+            android:lines="2"
+            android:text="Колбаса Докторская Стародворская вареная, 0.5 кг"
+            android:textColor="@color/text_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_image"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_recipes_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            app:layout_constraintStart_toStartOf="@+id/item_recipes_title"
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_title">
+
+            <ImageView
+                android:id="@+id/item_recipes_chief"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_recipes_chef"
+
+                android:layout_margin="5dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/item_recipes_chief_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_recipes_chief_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/TextRegular16"
+                android:text="Лёгкий"
+                android:layout_margin="5dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/item_recipes_chief"
+                app:layout_constraintTop_toTopOf="@+id/item_recipes_chief"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/item_recipes_chief" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_recipes_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="10dp"
+
+            app:layout_constraintTop_toTopOf="@+id/constraint_recipes_one"
+            app:layout_constraintEnd_toEndOf="@+id/item_recipes_title">
+
+            <ImageView
+                android:id="@+id/item_recipes_hourglass"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_recipes_hourglass"
+
+                android:layout_margin="5dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/item_recipes_hourglass_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_recipes_hourglass_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/TextRegular16"
+                android:text="50 мин."
+                android:layout_margin="5dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/item_recipes_hourglass"
+                app:layout_constraintTop_toTopOf="@+id/item_recipes_hourglass"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/item_recipes_hourglass" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/item_recipes_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/TextBold24"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="15dp"
+            android:text="7 600 руб."
+
+            app:layout_constraintStart_toStartOf="@+id/constraint_recipes_one"
+            app:layout_constraintTop_toBottomOf="@+id/constraint_recipes_one"/>
+
+        <TextView
+            android:id="@+id/item_recipes_price_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/TextRegular14"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="15dp"
+            android:text="@string/ForOnePerson"
+            android:textColor="@color/text_secondary"
+
+            app:layout_constraintStart_toEndOf="@+id/item_recipes_price"
+            app:layout_constraintTop_toTopOf="@+id/item_recipes_price"
+            app:layout_constraintBottom_toBottomOf="@+id/item_recipes_price"/>
+
+        <Button
+            android:id="@+id/item_recipes_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            style="@style/TextRegular16"
+            android:text="@string/ModeDetails"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginStart="@dimen/stars_margin"
+            android:layout_marginEnd="@dimen/stars_margin"
+            android:background="@drawable/ic_back_blue"
+
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_price"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

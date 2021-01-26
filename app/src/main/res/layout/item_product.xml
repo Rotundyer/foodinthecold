@@ -6,10 +6,7 @@
     android:id="@+id/item_product_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginEnd="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_margin="4dp"
     android:backgroundTint="@color/white"
     app:cardCornerRadius="@dimen/card_corner_radius_8"
     app:elevation="0dp"
@@ -23,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/item_product_image"
+            android:id="@+id/item_recipes_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="true"
@@ -38,16 +35,15 @@
 
         <ImageView
             android:id="@+id/item_product_like"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:padding="4dp"
             android:layout_margin="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/item_product_image"
-            app:layout_constraintTop_toTopOf="@+id/item_product_image"
-            app:srcCompat="@drawable/ic_heart_off" />
+            app:layout_constraintEnd_toEndOf="@+id/item_recipes_image"
+            app:layout_constraintTop_toTopOf="@+id/item_recipes_image" />
 
         <TextView
-            android:id="@+id/item_product_title"
+            android:id="@+id/item_recipes_title"
             style="@style/TextRegular16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -67,16 +63,16 @@
 
         <TextView
             android:id="@+id/item_product_price_base"
-            style="@style/TextRegular12"
+            style="@style/TextRegular10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/stars_margin"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="14 700 руб."
             android:textColor="@color/text_secondary"
             app:layout_constraintStart_toStartOf="parent"
 
-            app:layout_constraintTop_toBottomOf="@+id/item_product_title" />
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_title" />
 
         <TextView
             android:id="@+id/item_product_price"
@@ -105,7 +101,7 @@
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_product_title"
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_title"
             app:layout_constraintVertical_bias="0.962"
             app:srcCompat="@drawable/ic_cart_catalog" />
 
@@ -115,7 +111,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_product_image"
+            app:layout_constraintTop_toBottomOf="@+id/item_recipes_image"
 
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp">

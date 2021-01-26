@@ -7,4 +7,7 @@
     <string name="Recipes">Рецепты</string>
     <string name="Sets">Наборы</string>
     <string name="Farmers">Фермеры</string>
+    <string name="Bestsellers">Хиты продаж</string>
+    <string name="ForOnePerson">/на одного человека</string>
+    <string name="ModeDetails">Подробнее</string>
 </resources>
